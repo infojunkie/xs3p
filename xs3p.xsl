@@ -3062,6 +3062,7 @@ pre {
                   <xsl:with-param name="component" select="."/>
                </xsl:call-template>
                <!-- Documentation -->
+               <xsl:apply-templates select="." mode="hiddendoc"/>
                <xsl:call-template name="PrintSampleDocumentation">
                   <xsl:with-param name="component" select="."/>
                </xsl:call-template>
