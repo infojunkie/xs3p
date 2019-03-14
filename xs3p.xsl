@@ -95,7 +95,7 @@
  exclude-result-prefixes="xsd ppp html">
 
    <xsl:output
-    method="xml"
+    method="html"
     omit-xml-declaration="yes"
     doctype-system="about:legacy-compat"
     indent="yes"/>
@@ -302,7 +302,7 @@
                </xsl:choose>
             </style>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.3.2/markdown-it.min.js" type="text/javascript" charset="UTF-8">let preventSelfClosingTag = null;</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.3.2/markdown-it.min.js" type="text/javascript" charset="UTF-8"></script>
          </head>
          <body data-spy="scroll" data-target=".xs3p-sidebar" data-offset="65">
 
@@ -414,8 +414,8 @@
                </div>
             </div>
 
-            <script src="{$jQueryURL}" type="text/javascript" charset="UTF-8">let preventSelfClosingTag = null;</script>
-            <script src="{$bootstrapURL}/js/bootstrap.min.js" type="text/javascript" charset="UTF-8">let preventSelfClosingTag = null;</script>
+            <script src="{$jQueryURL}" type="text/javascript" charset="UTF-8"></script>
+            <script src="{$bootstrapURL}/js/bootstrap.min.js" type="text/javascript" charset="UTF-8"></script>
             <script>
                <xsl:text disable-output-escaping="yes">
 
