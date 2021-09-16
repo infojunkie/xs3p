@@ -419,21 +419,6 @@
                $(function () { $("[data-toggle='tooltip']").tooltip(); });
                $(function () { $("[data-toggle='popover']").popover(); });
 
-               var c = window.markdownit();
-               $('.xs3p-doc').each(function(i, obj) {
-                  var rawDocID = '#' + $(this).attr('id') + '-raw';
-                  var indent = $(rawDocID).html().match("^\\n[\\t ]*");
-                  if (!(indent === null)) {
-                     normalized = $(rawDocID).html().replace(new RegExp(indent[0], "gm"), "\n");
-                  } else {
-                     normalized = $(rawDocID).html();
-                  }
-                  $(this).html(c.render(normalized));
-                  $(this).find('code,pre').each(function(i, block) {
-                     $(this).html($(this).text());
-                  });
-               });
-
                $(window).scroll(function() {
                   if ($(".xs3p-sidebar").css("position") == "fixed" &amp;&amp; $(window).height() &lt; $(".xs3p-sidebar").height()) {
                      var perc = $(window).scrollTop() / $("#xs3p-content").height();
@@ -2551,7 +2536,7 @@ pre {
                      Linked documentation: <xsl:value-of select="./@source"/>
                   </xsl:if>
                </div>
-               <div class="xs3p-doc" id="{generate-id(.)}{$suffix}-doc"><xsl:text> </xsl:text></div>
+               <div class="xs3p-doc" id="{generate-id(.)}{$suffix}-doc"><xsl:value-of select="text()" disable-output-escaping="yes"/></div>
             </div>
          </xsl:for-each>
       </xsl:if>
